@@ -1,9 +1,16 @@
 import React from "react";
 
-function Search() {
+function Search(props) {
+  const { searchValue, setSearchValue } = props;
+
   return (
     <>
-      <input type="text" placeholder="Search laptops" />
+      <input
+        type="text"
+        placeholder="Search laptops by name"
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+      />
     </>
   );
 }

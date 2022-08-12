@@ -2,11 +2,18 @@ import React from "react";
 import Search from "./Search";
 import Sort from "./Sort";
 
-function Header() {
+function Header(props) {
+  const { laptopsData, searchValue, setSearchValue, isSorted, setIsSorted } =
+    props;
+
   return (
     <>
-      <Search />
-      <Sort />
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+      <Sort
+        laptopsData={laptopsData}
+        isSorted={isSorted}
+        setIsSorted={setIsSorted}
+      />
     </>
   );
 }

@@ -23,16 +23,30 @@ const App = () => {
 
   console.log(laptopsData);
 
-  //------ useState for search value
+  //------ useState for search value ------
   const [searchValue, setSearchValue] = useState("");
+
+  //------ filter function for search bar ------
+  const filteredLaptopsData = laptopsData.filter((laptop) => {
+    return laptop.name.toLowerCase().includes(searchValue.toLowerCase());
+  });
+
+  //------ useState for sort by weight ------
+  const [isSorted, setIsSorted] = useState(false);
 
   return (
     <>
       <h1>Laptops</h1>
       {laptopsData.length !== 0 ? (
         <>
-          <Header />
-          {laptopsData.map((laptop) => (
+          <Header
+            laptopsData={laptopsData}
+            isSorted={isSorted}
+            setIsSorted={setIsSorted}
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+          {filteredLaptopsData.map((laptop) => (
             <Laptop
               key={laptop.name}
               brand={laptop.brand}
