@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@mui/material";
 
 function Sort(props) {
   const { laptopsData, isSorted, setIsSorted } = props;
@@ -14,7 +15,11 @@ function Sort(props) {
     }
   };
 
-  return <button onClick={sortClickHandler}>Sort</button>;
+  return (
+    <Button variant="outlined" onClick={sortClickHandler}>
+      Sort
+    </Button>
+  );
 }
 
 export default Sort;

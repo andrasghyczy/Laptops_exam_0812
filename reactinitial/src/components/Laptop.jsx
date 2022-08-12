@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 
 function Laptop(props) {
   const { brand, name, weight } = props;
@@ -23,9 +24,9 @@ function Laptop(props) {
   return (
     <div className="laptop">
       <h2>Laptop name: {name}</h2>
-      <button className="show-more" onClick={clickShowMore}>
+      <Button variant="contained" className="show-more" onClick={clickShowMore}>
         {isShowMore}
-      </button>
+      </Button>
       {isClicked ? (
         <div className="details">
           <h3>Laptop brand: {brand}</h3>

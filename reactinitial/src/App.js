@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Laptop from "./components/Laptop";
 import LoadingMask from "./components/LoadingMask";
+import './App.css';
 
 const App = () => {
   //------ useState for data ------
